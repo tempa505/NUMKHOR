@@ -1,0 +1,915 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#111317;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#3c2f00", "background": "#111317", "surface-variant": "#333538", "on-primary-fixed": "#001e2c", "secondary-fixed": "#ffe088", "inverse-on-surface": "#2f3034", "on-secondary-container": "#342800", "surface-container-lowest": "#0c0e11", "surface-bright": "#37393d", "on-primary-fixed-variant": "#004c69", "on-tertiary-container": "#364557", "on-error-container": "#ffdad6", "primary-fixed-dim": "#7bd0ff", "on-error": "#690005", "surface-container-high": "#282a2d", "tertiary-fixed-dim": "#b9c8de", "secondary": "#e9c349", "tertiary-fixed": "#d4e4fa", "outline-variant": "#3e484f", "on-secondary-fixed-variant": "#574500", "error-container": "#93000a", "surface-container-low": "#1a1c1f", "on-surface": "#e2e2e6", "on-primary": "#00354a", "tertiary": "#becee4", "inverse-primary": "#00668a", "surface-dim": "#111317", "on-tertiary": "#233143", "tertiary-container": "#a3b2c7", "secondary-container": "#af8d11", "inverse-surface": "#e2e2e6", "primary-fixed": "#c4e7ff", "on-surface-variant": "#bdc8d1", "outline": "#87929a", "surface-tint": "#7bd0ff", "on-secondary-fixed": "#241a00", "surface-container": "#1e2023", "on-background": "#e2e2e6", "error": "#ffb4ab", "primary-container": "#38bdf8", "on-tertiary-fixed": "#0d1c2d", "on-tertiary-fixed-variant": "#39485a", "secondary-fixed-dim": "#e9c349", "surface": "#111317", "surface-container-highest": "#333538", "primary": "#8ed5ff", "on-primary-container": "#004965" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin": "3rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter": "1.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin-mobile": "1.25rem" }, "fontFamily": { "body-sm": ["Manrope"], "label-md": ["JetBrains Mono"], "headline-md": ["Space Grotesk"], "headline-hero-mobile": ["Space Grotesk"], "body-md": ["Manrope"], "label-sm": ["JetBrains Mono"], "body-lg": ["Manrope"], "headline-hero": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "label-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Space Grotesk"] }, "fontSize": { "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" }] } } } };</script><style data-stitch-css-vh="
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  ">
+    body {
+      min-height: max(884px, 884px);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface antialiased min-h-[884px] flex flex-col" data-stitch-vh="min-h-[884px]===min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.6)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="[BUSINESS NAME] Detailing Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBlv4GVc5CprJBSoSAhYgSF3Tzo1swNfEXRf40GeXHcv2G5mjZAAfLxZfN_Jb7L-3oqsSRKIigCTvyAWsYJVmIkp1yFwoP6DsCrL2PkIiaBviWlx6pK1YKBVKkj4rdmnntQbMnC4GkYbTKqWYJmymMd9bzzm0LWKvE3A5gGtacRqEJeN8qR8cFrBHjlHKlgrumUiQhyIcvZ1amMSJVP4_XXVHEN3EOqjzxqYnygday-"><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold leading-none">NUMKHOR</span><span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest font-label-sm text-label-sm text-primary tracking-wider uppercase">WA</span></div><span class="font-label-sm text-label-sm text-outline tracking-widest uppercase">100% Mobile • Perth Metro</span></div></div><div class="flex items-center gap-space-sm"><a class="hidden min-[380px]:inline-flex items-center justify-center h-9 px-space-md rounded bg-primary-container text-surface-container-lowest font-label-md text-label-md font-semibold tracking-wider uppercase transition-all shadow-[0_0_16px_rgba(56,189,248,0.35)] prototype-link-hover" data-path="booking-hub" href="#">Book</a><button aria-label="Menu Trigger" class="w-11 h-11 flex items-center justify-center rounded bg-surface-container-high/60 text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full text-on-surface">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest px-gutter-mobile py-space-xl">
+<!-- Ambient luxury light sheen background -->
+<div class="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-primary/10 blur-[80px] pointer-events-none"></div>
+<div class="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-secondary/10 blur-[70px] pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-lg">
+<!-- Luxury Badges Strip -->
+<div class="flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Perth Metro, WA</span><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider"><span class="material-symbols-outlined text-[14px]">local_shipping</span>100% Mobile Detailing</span><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm uppercase tracking-wider"><span class="material-symbols-outlined text-[14px]">verified</span>Transparent Upfront Rates</span></div>
+<!-- Main Headline & Subtext -->
+<div class="flex flex-col gap-space-sm"><h1 class="font-headline-hero-mobile text-headline-hero-mobile tracking-tight text-on-surface font-bold uppercase leading-none">NUMKHOR MOBILE<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed to-secondary">AUTO DETAILING</span><br>PERTH.</h1><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mt-1">We come directly to your driveway, home, or workplace anywhere in Perth Metro. Meticulous handcraft, deep seat &amp; carpet shampooing, transparent upfront rates, and zero compromises.</p></div>
+<!-- High-Impact Hero Showcase Card -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container shadow-2xl">
+<div class="relative h-60 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A dramatic close-up of a sleek supercar bodywork in obsidian black with crisp studio LED light tube reflections, showing spotless glossy paintwork, wet-look tyre dressings, and a clean metallic wheel finish inside a state-of-the-art Perth detailing bay at dusk with cyan ambient accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATYgzao-I3vS_gn7vvd_j_WPkXdBTEBPhIiJ5YmJ2xDcUgbPRwPRZILF-9Id4MPwLgs5wjWjxdFWQbvVC0OQWP0844kyIc1bOQC_lca86SD17VLyk4t1EPgqAEcBfkr8cj72Vi7ALcL2iCr4GYWfJfj-dDnFoF1hRSCojy-RJA6YTcUWKEcoWtokJqUrflDDc_D3iag7HxclqN4XG4w9zQ7WrA592X9eTE4qms3EA">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/30 to-transparent"></div>
+<!-- Live Telemetry Tag -->
+<div class="absolute top-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md"><span class="material-symbols-outlined text-primary text-[16px]">electric_car</span><span class="font-label-sm text-label-sm text-on-surface tracking-wider uppercase font-semibold">Mobile de• We Come To You</span></div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">5.0 Star Quality</span>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between bg-surface-container-high"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span><span class="font-body-sm text-body-sm text-on-surface">Mobile Service Across All Perth Metro Suburbs</span></div><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">WA • AT YOUR DOOR</span></div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-3 pt-1">
+<a class="w-full h-12 flex items-center justify-center gap-2 rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(56,189,248,0.35)] transition-transform active:scale-[0.98]" href="#booking-section">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+          Book an Appointment
+        </a>
+<a class="w-full h-12 flex items-center justify-center gap-2 rounded bg-surface-container-high text-on-surface font-label-lg text-label-lg uppercase tracking-wider transition-colors hover:bg-surface-variant" href="#packages-section">
+<span class="material-symbols-outlined text-[20px]">list_alt</span>
+          Explore Our Services
+        </a>
+</div>
+<!-- Trust Stat Strip -->
+<div class="grid grid-cols-3 gap-2 pt-2"><div class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container-low shadow-sm"><span class="font-headline-sm text-headline-sm font-bold text-primary">4</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1 leading-tight">Curated Packages</span></div><div class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container-low shadow-sm"><span class="material-symbols-outlined text-primary text-[24px]">directions_car</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1 leading-tight">100% Mobile Van</span></div><div class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container-low shadow-sm"><span class="font-label-lg text-label-lg font-bold text-secondary">AWST</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1 leading-tight">Perth Timezone</span></div></div>
+</div>
+</section>
+<!-- QUICK NAVIGATION PILL TABS -->
+<div class="w-full sticky top-16 z-30 bg-surface-container-lowest/90 backdrop-blur-xl px-gutter-mobile py-2.5 shadow-md flex items-center gap-2 overflow-x-auto no-scrollbar">
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm tracking-wide" href="#packages-section">Packages</a>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm tracking-wide" href="#transparency-section">Honest Standards</a>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm tracking-wide" href="#calculator-section">Live Calculator</a>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm tracking-wide" href="#booking-section">Schedule</a>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm tracking-wide" href="#gallery-section">Gallery</a>
+</div>
+<!-- CAR DETAILING PACKAGES SECTION -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-lg" id="packages-section">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Tiered Craftsmanship</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold uppercase tracking-tight text-on-surface">
+        Detailing Packages
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Transparent AUD rates. All packages performed with meticulous care using pH-neutral chemicals and non-scratch microfibres.
+      </p>
+</div>
+<!-- Package 1: Exterior Clean -->
+<div class="relative rounded-xl p-5 bg-surface-container shadow-xl flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Package 01</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Exterior Clean</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Est. 2 hours dedicated finish</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">$120</div>
+<span class="font-label-sm text-label-sm text-outline uppercase">AUD Flat</span>
+</div>
+</div>
+<div class="h-px w-full bg-surface-container-highest"></div>
+<div class="flex flex-col gap-2.5">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">Included Services:</span>
+<div class="grid grid-cols-1 gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Exterior hand wash with two-bucket method</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Wheels and tyres thoroughly cleaned &amp; dressed</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Exterior windows cleaned streak-free</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Exterior hand drying with plush microfibre towels</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-2 h-11 flex items-center justify-center gap-2 rounded bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary-container hover:text-on-primary-container transition-colors" onclick="selectPackageForBooking('Exterior Clean', 120, '2 hours')">
+<span>Book Exterior Clean</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Package 2: Interior Clean -->
+<div class="relative rounded-xl p-5 bg-surface-container shadow-xl flex flex-col gap-4"><div class="flex items-start justify-between"><div><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Package 02</span><h3 class="font-headline-md text-headline-md font-bold text-on-surface">Interior Clean</h3><div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm mt-0.5"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span><span>Est. 3 hrs 30 mins mobile onsite</span></div></div><div class="text-right"><div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">$180</div><span class="font-label-sm text-label-sm text-outline uppercase">AUD Flat</span></div></div><div class="h-px w-full bg-surface-container-highest"></div><div class="flex flex-col gap-2.5"><span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">Included Services (Mobile Onsite):</span><div class="grid grid-cols-1 gap-2 font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span><span class="text-on-surface font-semibold">Deep fabric seat shampooing &amp; leather wipe-down</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span><span class="text-on-surface font-semibold">Carpet &amp; floor mat shampooing &amp; high-suction extraction</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span><span>Thorough vacuuming of seats, boot, and footwells</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span><span>Dashboard dusted, cleansed &amp; UV conditioned</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span><span>Centre console &amp; cupholder deep sanitisation</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span><span>Interior window &amp; windscreen clarity cleaning</span></div></div></div><button class="w-full mt-2 h-11 flex items-center justify-center gap-2 rounded bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary-container hover:text-on-primary-container transition-colors" onclick="selectPackageForBooking('Interior Clean', 180, '3.5 hours')"><span>Book Mobile Interior Clean</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div>
+<!-- Package 3: Standard Detail (Popular Choice) -->
+<div class="relative rounded-xl p-5 bg-surface-container shadow-2xl flex flex-col gap-4 overflow-hidden">
+<!-- Glow effect for popular choice -->
+<div class="absolute -top-16 -right-16 w-36 h-36 bg-primary/20 rounded-full blur-2xl"></div>
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+          Most Popular Choice
+        </span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Package 03</span>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Standard Detail</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Est. 4–5 hours combined</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary-container">$220</div>
+<span class="font-label-sm text-label-sm text-outline uppercase">AUD Flat</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Our recommended complete rejuvenation balance for daily drivers and weekend pride-and-joys.
+      </p>
+<div class="h-px w-full bg-surface-container-highest"></div>
+<div class="flex flex-col gap-2.5">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">Comprehensive Inclusions:</span>
+<div class="grid grid-cols-1 gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Complete exterior hand wash &amp; rinse</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Wheel &amp; tyre cleaning with satin tyre dress</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Plush microfibre exterior drying</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Full interior vacuuming (carpets, seats, mats)</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Dashboard &amp; centre console cleaning</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Door panel &amp; cupholder cleaning</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Interior &amp; exterior glass clarity clean</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-2 h-12 flex items-center justify-center gap-2 rounded bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider font-bold shadow-[0_0_16px_rgba(56,189,248,0.3)] hover:brightness-110 transition-all" onclick="selectPackageForBooking('Standard Detail', 220, '4-5 hours')">
+<span>Book Standard Detail</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Package 4: Full Detail (Master Luxury Tier) -->
+<div class="relative rounded-xl p-5 bg-surface-container-high shadow-2xl flex flex-col gap-4 overflow-hidden"><div class="flex items-center justify-between"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/80 text-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-[14px]">workspace_premium</span>Master Luxury Tier</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Package 04</span></div><div class="flex items-start justify-between"><div><h3 class="font-headline-md text-headline-md font-bold text-secondary">Full Detail</h3><div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm mt-0.5"><span class="material-symbols-outlined text-[16px] text-secondary">schedule</span><span>Est. approx 6 hours mobile craft</span></div></div><div class="text-right"><div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-secondary">$280</div><span class="font-label-sm text-label-sm text-outline uppercase">AUD Flat</span></div></div><p class="font-body-sm text-body-sm text-on-surface-variant">The complete vehicle overhaul delivered directly to your driveway. Complete exterior wash, wheels, plus full interior seat &amp; carpet shampoo extraction.</p><div class="h-px w-full bg-surface-variant"></div><div class="flex flex-col gap-2.5"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Master Tier Inclusions:</span><div class="grid grid-cols-1 gap-2 font-body-sm text-body-sm text-on-surface"><div class="flex items-center gap-2.5 text-secondary"><span class="material-symbols-outlined text-[18px]">verified</span><span class="font-semibold text-on-surface">Everything in Standard Detail</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px]">star</span><span class="text-secondary font-medium">Full fabric seat shampooing &amp; leather deep conditioning</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px]">star</span><span class="text-secondary font-medium">Complete carpet &amp; boot shampoo extraction</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px]">star</span><span>Detailed AC vent cleaning with soft boar hair brushes</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px]">star</span><span>Crevices &amp; difficult-to-reach seat sliders detailed</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px]">star</span><span>Door jamb and sill degreasing &amp; drying</span></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px]">star</span><span>Thorough wheel barrel decontamination</span></div></div></div><button class="w-full mt-2 h-12 flex items-center justify-center gap-2 rounded bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider font-bold shadow-[0_0_20px_rgba(233,195,73,0.3)] hover:brightness-110 transition-all" onclick="selectPackageForBooking('Full Detail', 280, 'Approx. 6 hours')"><span>Book Mobile Full Detail</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div>
+</section>
+<!-- HONEST SERVICE CLARITY / TRANSPARENT BOUNDARIES -->
+<section class="w-full px-gutter-mobile py-space-md" id="transparency-section"><div class="w-full rounded-2xl p-5 bg-surface-container-low shadow-xl flex flex-col gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-[22px]">policy</span></div><div><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Customer Promise</span><h3 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">Service Scope &amp; Honest Boundaries</h3></div></div><p class="font-body-sm text-body-sm text-on-surface-variant">We believe in 100% transparency. <strong class="text-primary font-semibold">Deep seat shampooing and carpet extraction are proudly included</strong> in our Interior and Full Detail packages. To maintain honest expectations and avoid misleading upsells, our mobile service explicitly does <strong class="text-on-surface font-semibold">NOT</strong> offer:</p><div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1"><div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container"><span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">cancel</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase">No Multi-Stage Paint Correction</span><span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Rotary heavy compounding &amp; wet sanding are omitted.</span></div></div><div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container"><span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">cancel</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase">No Multi-Year Ceramic Coatings</span><span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Crystalline permanent glass coatings are omitted.</span></div></div><div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container"><span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">cancel</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase">No Engine Bay Pressure Blasting</span><span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Protects delicate modern ECU sensors and electronics.</span></div></div><div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container"><span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">cancel</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase">No Paint Resprays or Body Repairs</span><span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">We provide dedicated cleaning &amp; hand preservation only.</span></div></div><div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container sm:col-span-2"><span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">cancel</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase">No Guaranteed Stain Removal</span><span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Deep-set permanent fabric burns or chemical bleach cannot be guaranteed 100% reversible without fabric fraying.</span></div></div></div><div class="p-3 rounded-lg bg-surface-container-high flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">verified</span><span class="font-body-sm text-body-sm text-on-surface text-[13px]">By focusing strictly on specialized mobile cleaning and shampoo extraction, we guarantee punctual turnaround and immaculate finish right at your door.</span></div></div></section>
+<!-- ADDITIONAL CLEANING & VEHICLE CHARGES SECTION -->
+<section class="w-full px-gutter-mobile py-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Strict Pricing Integrity</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold uppercase tracking-tight text-on-surface">
+        Additional Surcharges
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Perth environments frequently encounter beach sand, outback red dust, and pet transport. Fair and transparent extra charges apply:
+      </p>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Item: SUV / Ute -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">directions_car</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">SUV / Ute Surcharge</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Extra surface area &amp; cabin size</span>
+</div>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">+$40 <span class="font-label-sm text-label-sm text-outline">AUD</span></div>
+</div>
+<!-- Item: 7-Seater -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">airport_shuttle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">7-Seater Vehicle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Additional third row &amp; cargo area</span>
+</div>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">+$60 <span class="font-label-sm text-label-sm text-outline">AUD</span></div>
+</div>
+<!-- Item: Heavy Sand -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">waves</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Heavy Sand Vacuuming</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Coastal Perth beach visits &amp; deep fibre embed</span>
+</div>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">+$40 <span class="font-label-sm text-label-sm text-outline">AUD</span></div>
+</div>
+<!-- Item: Excessive Pet Hair -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">pets</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Excessive Pet Hair Removal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Requires specialist rubber static brushes</span>
+</div>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">+$60 <span class="font-label-sm text-label-sm text-outline">AUD</span></div>
+</div>
+<!-- Item: Red Dust Cleaning -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">terrain</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Red Dust Cleaning (Pilbara / Bush)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Iron oxide red dirt in jams &amp; crevices</span>
+</div>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">+$80 <span class="font-label-sm text-label-sm text-outline">AUD</span></div>
+</div>
+<!-- Item: Severe Red Dust Contamination -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high shadow-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-[24px]">warning</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-error font-semibold">Severe Red Dust Contamination</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Deep engine bay/cabin penetration</span>
+</div>
+</div>
+<div class="font-label-md text-label-md font-bold text-error uppercase">Custom Quote</div>
+</div>
+</div>
+<!-- Surcharge Rules Callout -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Rules of Fair Billing</span>
+</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 list-disc pl-4">
+<li><strong>No Surcharge Stacking:</strong> SUV/Ute (+$40) and 7-seater (+$60) surcharges are <em>never combined</em>; only the single applicable size surcharge applies.</li>
+<li><strong>Red Dust Mutually Exclusive:</strong> Selecting severe red dust disables standard red dust; they are never double-counted.</li>
+<li><strong>Rubbish removal:</strong> Light packaging is included free; rubbish removal is NOT a paid add-on.</li>
+<li><strong>Final verification:</strong> Quoted pricing is confirmed with you upon visual assessment before detailing commences.</li>
+</ul>
+</div>
+</section>
+<!-- INTERACTIVE PRICING CALCULATOR -->
+<section class="w-full px-gutter-mobile py-space-xl bg-surface-container-lowest" id="calculator-section">
+<div class="w-full rounded-2xl bg-surface-container p-5 md:p-6 shadow-2xl flex flex-col gap-5">
+<!-- Widget Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-surface-container-lowest flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">calculate</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Estimate Calculator</h2>
+<span class="font-label-sm text-label-sm text-primary uppercase">Perth Detailing Cost Estimator</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm uppercase">Live AUD</span>
+</div>
+<!-- Step 1: Package Selection -->
+<div class="flex flex-col gap-2.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-[11px] text-primary">1</span>
+          Select Package Tier
+        </label>
+<div class="grid grid-cols-2 gap-2" id="calc-package-group">
+<!-- Package Option 1 -->
+<label class="flex flex-col p-3 rounded-lg bg-surface-container-high cursor-pointer transition-colors relative" data-calc-pkg="120">
+<input class="hidden" data-name="Exterior Clean" name="calc_package" onchange="calculateQuote()" type="radio" value="120">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Exterior</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">$120</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-1">2h • Wash &amp; Wheels</span>
+</label>
+<!-- Package Option 2 -->
+<label class="flex flex-col p-3 rounded-lg bg-surface-container-high cursor-pointer transition-colors relative" data-calc-pkg="180">
+<input class="hidden" data-name="Interior Clean" name="calc_package" onchange="calculateQuote()" type="radio" value="180">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Interior</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">$180</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-1">3.5h • Deep Vacuum</span>
+</label>
+<!-- Package Option 3 (Default Checked) -->
+<label class="flex flex-col p-3 rounded-lg bg-surface-container-highest cursor-pointer transition-colors relative ring-1 ring-primary-container" data-calc-pkg="220">
+<input checked="" class="hidden" data-name="Standard Detail" name="calc_package" onchange="calculateQuote()" type="radio" value="220">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-primary">Standard</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">$220</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-1">4-5h • Complete Care</span>
+</label>
+<!-- Package Option 4 -->
+<label class="flex flex-col p-3 rounded-lg bg-surface-container-high cursor-pointer transition-colors relative" data-calc-pkg="280">
+<input class="hidden" data-name="Full Detail" name="calc_package" onchange="calculateQuote()" type="radio" value="280">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-secondary">Full Detail</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">$280</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-1">6h • Master Level</span>
+</label>
+</div>
+</div>
+<!-- Step 2: Vehicle Type (Mutually Exclusive Surcharges) -->
+<div class="flex flex-col gap-2.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-[11px] text-primary">2</span>
+          Vehicle Size / Classification
+        </label>
+<div class="grid grid-cols-3 gap-2" id="calc-vehicle-group">
+<label class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-highest text-center cursor-pointer ring-1 ring-primary" data-vehicle-type="sedan">
+<input checked="" class="hidden" data-type-name="Sedan / Hatch" name="calc_vehicle" onchange="calculateQuote()" type="radio" value="0">
+<span class="material-symbols-outlined text-[20px] text-primary">directions_car</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface mt-1">Sedan/Hatch</span>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">+$0</span>
+</label>
+<label class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-high text-center cursor-pointer" data-vehicle-type="suv">
+<input class="hidden" data-type-name="SUV / Ute" name="calc_vehicle" onchange="calculateQuote()" type="radio" value="40">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">airport_shuttle</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface mt-1">SUV / Ute</span>
+<span class="font-label-sm text-label-sm text-primary mt-0.5">+$40</span>
+</label>
+<label class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-high text-center cursor-pointer" data-vehicle-type="7seater">
+<input class="hidden" data-type-name="7-Seater" name="calc_vehicle" onchange="calculateQuote()" type="radio" value="60">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">rv_hookup</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface mt-1">7-Seater</span>
+<span class="font-label-sm text-label-sm text-primary mt-0.5">+$60</span>
+</label>
+</div>
+</div>
+<!-- Step 3: Specific Add-ons -->
+<div class="flex flex-col gap-2.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-[11px] text-primary">3</span>
+          Condition &amp; Environmental Add-Ons
+        </label>
+<div class="flex flex-col gap-2">
+<!-- Heavy Sand -->
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high cursor-pointer">
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary-container" data-label="Heavy sand vacuuming" id="addon-sand" onchange="calculateQuote()" type="checkbox" value="40">
+<span class="font-body-sm text-body-sm text-on-surface">Heavy sand vacuuming (Beach trip)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">+$40</span>
+</label>
+<!-- Excessive Pet Hair -->
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high cursor-pointer">
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary-container" data-label="Excessive pet hair removal" id="addon-pethair" onchange="calculateQuote()" type="checkbox" value="60">
+<span class="font-body-sm text-body-sm text-on-surface">Excessive pet hair removal</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">+$60</span>
+</label>
+<!-- Red Dust Cleaning -->
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high cursor-pointer" id="container-addon-reddust">
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary-container" data-label="Red dust cleaning" id="addon-reddust" onchange="handleRedDustChange('standard')" type="checkbox" value="80">
+<span class="font-body-sm text-body-sm text-on-surface">Standard Red Dust Cleaning</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">+$80</span>
+</label>
+<!-- Severe Red Dust (Custom Quote) -->
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high cursor-pointer" id="container-addon-severered">
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary-container" data-label="Severe red dust" id="addon-severered" onchange="handleRedDustChange('severe')" type="checkbox" value="quote">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-error font-medium">Severe Red Dust Contamination</span>
+<span class="font-label-sm text-label-sm text-outline">Disables standard red dust surcharge</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-error font-bold uppercase">Inspection Quote</span>
+</label>
+</div>
+</div>
+<!-- Warning Callout if Severe Red Dust is Selected -->
+<div class="hidden p-3 rounded-lg bg-surface-container-highest text-error flex items-start gap-2.5" id="severe-dust-warning">
+<span class="material-symbols-outlined text-[20px] shrink-0">info</span>
+<span class="font-body-sm text-body-sm leading-snug">
+<strong>Inspection required:</strong> Severe red dust penetration requires an in-person visual inspection to confirm work scope. Final pricing will be provided after assessing the vehicle.
+        </span>
+</div>
+<!-- Live Calculation Display Panel -->
+<div class="p-4 rounded-xl bg-surface-container-lowest flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Calculated Total</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="calc-breakdown-sub">Standard Detail (Sedan / Hatch)</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-hero-mobile text-headline-hero-mobile font-bold text-primary-container leading-none" id="calc-total-display">$220</span>
+<span class="font-label-md text-label-md text-outline uppercase font-semibold">AUD</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Incl. GST &amp; Inspection</span>
+</div>
+<button class="w-full mt-2 h-12 flex items-center justify-center gap-2 rounded bg-primary-container text-surface-container-lowest font-label-md text-label-md uppercase font-bold tracking-wider shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:brightness-110 active:scale-[0.98] transition-all" onclick="transferQuoteToBooking()">
+<span>Continue with this Estimate to Booking</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SEAMLESS BOOKING & GOOGLE CALENDAR APPOINTMENT SCHEDULE WORKFLOW -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-lg" id="booking-section">
+<div class="flex flex-col gap-1"><div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Mobile Detailing Specialists</span></div><h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold uppercase tracking-tight text-on-surface">About Numkhor Mobile Auto Detailing</h2></div>
+<!-- Booking Workflow Box -->
+<div class="w-full rounded-2xl bg-surface-container p-5 md:p-6 shadow-xl flex flex-col gap-6"><h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Direct Mobile Inquiries</h3><div class="flex flex-col gap-3"><a class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-high transition-colors hover:bg-surface-variant" href="tel:+61411340768"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">call</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-outline uppercase">Call or SMS</span><span class="font-body-md text-body-md font-bold text-on-surface">+61 411 340 768</span></div></div><span class="material-symbols-outlined text-primary text-[20px]">arrow_outward</span></a><a class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-high transition-colors hover:bg-surface-variant" href="https://wa.me/61411340768?text=Hi%20Numkhor%20Mobile%20Auto%20Detailing,%20I'd%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-[#25D366]/20 flex items-center justify-center text-[#25D366]"><span class="material-symbols-outlined text-[20px]">chat</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-outline uppercase">Instant Chat • WhatsApp</span><span class="font-body-md text-body-md font-bold text-[#25D366]">+61 411 340 768</span></div></div><span class="material-symbols-outlined text-[#25D366] text-[20px]">arrow_outward</span></a><div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-high opacity-85"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[20px]">mail</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-outline uppercase">Email Dispatch</span><span class="font-body-sm text-body-sm text-on-surface-variant">Email coming soon / Book via WhatsApp or Phone</span></div></div><span class="font-label-sm text-label-sm text-outline uppercase">Soon</span></div></div><div class="p-3.5 rounded-xl bg-surface-container-lowest flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Mobile Operating Hours</span><span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>Dispatch Active</span></div><div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface"><span>Monday – Saturday:</span><span class="font-bold">8:00 AM – 5:00 PM AWST</span></div><div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant text-[13px]"><span>Sunday:</span><span class="text-outline">Prior Appointment Only</span></div></div><div class="flex items-center gap-2.5 text-on-surface-variant font-body-sm text-body-sm text-[13px]"><span class="material-symbols-outlined text-primary text-[18px] shrink-0">pin_drop</span><span>Service Area: 100% Mobile Service across all Perth Metro Suburbs (We come to your home, driveway, or office).</span></div></div>
+</section>
+<!-- GALLERY SHOWCASE SECTION (Curated Categories with Placeholder Badges) -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-lg" id="gallery-section">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Visual Portfolio</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold uppercase tracking-tight text-on-surface">
+        Finish Showcase
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Browse curated angles of our hand-washed detailing finishes across Perth.
+      </p>
+</div>
+<!-- Category Pill Filters -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="gallery-filter-btn shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold uppercase" onclick="filterGallery('all', this)">All Work</button>
+<button class="gallery-filter-btn shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase" onclick="filterGallery('exterior', this)">Exterior</button>
+<button class="gallery-filter-btn shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase" onclick="filterGallery('interior', this)">Interior</button>
+<button class="gallery-filter-btn shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase" onclick="filterGallery('wheels', this)">Wheels &amp; Tyres</button>
+<button class="gallery-filter-btn shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase" onclick="filterGallery('carpet', this)">Carpets &amp; Boot</button>
+</div>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 gap-4" id="gallery-grid">
+<!-- Item 1: Exterior Detailing -->
+<div class="gallery-item exterior relative rounded-xl overflow-hidden bg-surface-container shadow-xl">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="High gloss deep dark navy metallic sports car bonnet reflecting precision overhead fluorescent tube lights without swirl marks, hand-dried finish, liquid black reflection in Perth Western Australia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkZViq685zgVpVJYnbddNcymPSaMu5I8dcLNQeU9iedM7-_8EuPuh1zjT2vBd-hFEwBcZwTRY7u9DVII4QqrLlqUXiO2-k47CCJKr8DJ88fArnkHpxZBrzyS2Mt2T73KasCXCcaiePh5wEoD1BvsG80ajYU8hl857Xfy1mxLyLiUCZVL__wOTOHd2emKQSywW11VN7SzZ8Bm3fErgN1x7aUOXZdOHmVtOYEvaa8NM">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm text-primary uppercase font-semibold">
+            Exterior Detailing
+          </div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-highest/80 backdrop-blur-md font-label-sm text-label-sm text-outline uppercase">
+            Placeholder Showcase
+          </div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Precision Hand Wash</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Swirl-free wash mitt process &amp; streak-free glass</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">verified</span>
+</div>
+</div>
+<!-- Item 2: Interior Detailing -->
+<div class="gallery-item interior relative rounded-xl overflow-hidden bg-surface-container shadow-xl">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="Immaculate luxury car cockpit showing freshly wiped matte black leather steering wheel, pristine air vents brushed free of dust, and crystal clear digital infotainment screen with soft ambient cabin lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwMPxMQduaa_sWOOy1wpi_-Rg6cPacahUtHO4CrvmRXz0jqzToz2whuUmldTXAnQn-wd32nTKvHfTLBm4twXmfwQUBmwpSqzxO2mf5PeJVc8FxHYXHi-verIIHlbq3hmZbyVikfiEQGQzNSQE4hdqQYPDTrO-o1j4_eyC0OmB7WMaY1ghlqJjL9dkupZOj-dhx8dGQlgMPnX2dtc5JB5semrP3aPbx4eRI5io50QI">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm text-primary uppercase font-semibold">
+            Interior Detailing
+          </div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-highest/80 backdrop-blur-md font-label-sm text-label-sm text-outline uppercase">
+            Placeholder Showcase
+          </div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Cockpit Sanitisation</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Console, cupholders, buttons and UV trim conditioning</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">verified</span>
+</div>
+</div>
+<!-- Item 3: Wheels & Tyres -->
+<div class="gallery-item wheels relative rounded-xl overflow-hidden bg-surface-container shadow-xl">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="Extreme macro shot of a satin gunmetal alloy wheel rim with bright red brake caliper behind it, free of brake dust, paired with a satin black dressed performance tyre in sharp studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4C5fdWGYRuwekQrMf3OAIns4IcbJh0e51ap26lyUhssyt188vtIrxazrkXwZFJXyUcAMqy0EJbM7b0hnrRGI9h3Vx_HoPwwJTCA-bXgArEORaoTKtTqUZi0ZdjStG3ydraG1HcoBlMpFvXhr5U1Fj_tqzWjCSWU7kmH9A1koyzJ_-F8g1fQLwrxiZZEA7H9Wmz-6dBQPV6ugLp336jchZqfAqyiAMFB4WUVHz_-w">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm text-secondary uppercase font-semibold">
+            Wheels &amp; Tyres
+          </div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-highest/80 backdrop-blur-md font-label-sm text-label-sm text-outline uppercase">
+            Placeholder Showcase
+          </div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Brake Dust Decontamination</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Wheel barrels decontaminated and tyres satin conditioned</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[22px]">star</span>
+</div>
+</div>
+<!-- Item 4: Carpet & Floor Vacuuming -->
+<div class="gallery-item carpet relative rounded-xl overflow-hidden bg-surface-container shadow-xl">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="Deep black velour automotive carpet footwell with crisp vacuum striation lines, showing complete extraction of sand grains and dirt particles, with pedal assemblies cleanly wiped down." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLP0OTIR66mXJUb_kYN4ikS93QXzn2qt6HetfJAx67IIerjjMlpciNkSQLJQIjswxG_kYEy7vxt3PPW_PAQZqZV7TtwJWTAnc11er-YWrKuzhpKt8LDtmbLk0XXSBH5htCy7pNdohkhNbqW2KYhFQi7KAhwiBU_ez8k4K2Aiz5jCPbXrugumwJ5EnyHtsNcwXEyatrjyhEPRPJvNED2JidjPGI4vMaxX34Qp5gsc">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm text-primary uppercase font-semibold">
+            Carpet &amp; Boot Vacuuming
+          </div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-highest/80 backdrop-blur-md font-label-sm text-label-sm text-outline uppercase">
+            Placeholder Showcase
+          </div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">High-Lift Fibre Vacuuming</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Sand eradication from thick automotive floor mats</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">verified</span>
+</div>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low text-center"><span class="font-label-sm text-label-sm text-outline">* High Definition Perth Mobile Detailing Captures • We Come Directly To You</span></div>
+</section>
+<!-- ABOUT & CONTACT SECTION -->
+<section class="w-full px-gutter-mobile py-space-xl bg-surface-container-lowest flex flex-col gap-space-lg">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">The Studio Standard</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold uppercase tracking-tight text-on-surface">
+        About [BUSINESS NAME]
+      </h2>
+</div>
+<!-- About Content -->
+<div class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<p>
+        Founded on uncompromising standards in <strong class="text-on-surface">Perth, Western Australia</strong>, [BUSINESS NAME] specializes in deliberate, careful cleaning without rushed shortcuts or deceptive upselling.
+      </p>
+<p>
+        Whether your car has braved the red dust trails up North, beach sand from Cottesloe and Trigg, or daily city commuting along the Mitchell Freeway, every vehicle is treated with genuine respect and high-tier precision.
+      </p>
+</div>
+<!-- Direct Contact Matrix Card -->
+<div class="w-full rounded-2xl bg-surface-container p-5 shadow-2xl flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Direct Studio Inquiries</h3>
+<div class="flex flex-col gap-3">
+<!-- Phone -->
+<a class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-high transition-colors hover:bg-surface-variant" href="tel:[Phone Number]">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Call or SMS</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">[Phone Number]</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_outward</span>
+</a>
+<!-- WhatsApp -->
+<a class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-high transition-colors hover:bg-surface-variant" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#25D366]/20 flex items-center justify-center text-[#25D366]">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Instant Chat</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Chat on WhatsApp</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#25D366] text-[20px]">arrow_outward</span>
+</a>
+<!-- Email -->
+<a class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-high transition-colors hover:bg-surface-variant" href="mailto:[Email Address]">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Email Dispatch</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">[Email Address]</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_outward</span>
+</a>
+</div>
+<!-- Studio Operating Hours -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Operating Hours</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            Booking Active
+          </span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface">
+<span>Monday – Saturday:</span>
+<span class="font-bold">8:00 AM – 5:00 PM AWST</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant text-[13px]">
+<span>Sunday:</span>
+<span class="text-outline">Closed / Studio By Prior Arrangement</span>
+</div>
+</div>
+<!-- Location Note -->
+<div class="flex items-center gap-2.5 text-on-surface-variant font-body-sm text-body-sm text-[13px]">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">pin_drop</span>
+<span>Service Location: Perth, Western Australia (Mobile &amp; workshop arrangements confirmed upon scheduling).</span>
+</div>
+</div>
+</section>
+<!-- LUXURY FOOTER -->
+<footer class="w-full bg-surface-container-lowest px-gutter-mobile py-space-xl flex flex-col gap-6 text-on-surface-variant"><div class="flex flex-col gap-2"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm font-bold text-on-surface uppercase">NUMKHOR MOBILE AUTO DETAILING</span><span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-primary uppercase">WA</span></div><p class="font-body-sm text-body-sm text-outline">Specialist mobile automotive detailing, deep seat and carpet shampoo extraction, and paint preservation across Perth, Western Australia.</p></div><div class="flex flex-wrap gap-1.5 font-label-sm text-label-sm text-outline"><span class="px-2 py-1 rounded bg-surface-container">Numkhor Mobile Detailing</span><span class="px-2 py-1 rounded bg-surface-container">Perth Metro</span><span class="px-2 py-1 rounded bg-surface-container">Seat &amp; Carpet Shampoo</span><span class="px-2 py-1 rounded bg-surface-container">Driveway Mobile Service</span><span class="px-2 py-1 rounded bg-surface-container">AWST Dispatch</span></div><div class="h-px w-full bg-surface-container"></div><div class="flex flex-col gap-2 font-label-sm text-label-sm text-outline"><div class="flex items-center justify-between"><span>© <span id="year-span">2026</span> NUMKHOR MOBILE AUTO DETAILING. All rights reserved.</span></div><div class="flex items-center justify-between"><span>Mobile Van Detailing</span><span class="text-primary font-semibold">Perth, WA • +61 411 340 768</span></div></div></footer>
+</div>
+<!-- INLINE CLIENT LOGIC FOR INTERACTIVITY -->
+<script>
+  // Ensure year is dynamically fresh
+  document.getElementById('year-span').innerText = new Date().getFullYear();
+
+  // State Management
+  let currentEstimate = {
+    packageName: 'Standard Detail',
+    basePrice: 220,
+    vehicleType: 'Sedan / Hatch',
+    vehicleSurcharge: 0,
+    heavySand: 0,
+    petHair: 0,
+    redDust: 0,
+    severeRedDust: false,
+    total: 220
+  };
+
+  // Mutually Exclusive Red Dust Handler
+  function handleRedDustChange(type) {
+    const stdDust = document.getElementById('addon-reddust');
+    const severeDust = document.getElementById('addon-severered');
+    const warning = document.getElementById('severe-dust-warning');
+
+    if (type === 'severe' && severeDust.checked) {
+      stdDust.checked = false;
+      warning.classList.remove('hidden');
+    } else if (type === 'standard' && stdDust.checked) {
+      severeDust.checked = false;
+      warning.classList.add('hidden');
+    } else if (!severeDust.checked) {
+      warning.classList.add('hidden');
+    }
+    calculateQuote();
+  }
+
+  // Calculate live estimate
+  function calculateQuote() {
+    // 1. Package
+    const packageRadios = document.querySelectorAll('input[name="calc_package"]');
+    let pkgPrice = 220;
+    let pkgName = 'Standard Detail';
+    packageRadios.forEach(r => {
+      const parentLabel = r.closest('label');
+      if (r.checked) {
+        pkgPrice = parseInt(r.value, 10);
+        pkgName = r.getAttribute('data-name');
+        parentLabel.classList.add('bg-surface-container-highest', 'ring-1', 'ring-primary-container');
+        parentLabel.classList.remove('bg-surface-container-high');
+      } else {
+        parentLabel.classList.remove('bg-surface-container-highest', 'ring-1', 'ring-primary-container');
+        parentLabel.classList.add('bg-surface-container-high');
+      }
+    });
+
+    // 2. Vehicle Surcharge (Never combined)
+    const vehicleRadios = document.querySelectorAll('input[name="calc_vehicle"]');
+    let vehSurcharge = 0;
+    let vehName = 'Sedan / Hatch';
+    vehicleRadios.forEach(v => {
+      const parentLabel = v.closest('label');
+      if (v.checked) {
+        vehSurcharge = parseInt(v.value, 10);
+        vehName = v.getAttribute('data-type-name');
+        parentLabel.classList.add('bg-surface-container-highest', 'ring-1', 'ring-primary');
+        parentLabel.classList.remove('bg-surface-container-high');
+      } else {
+        parentLabel.classList.remove('bg-surface-container-highest', 'ring-1', 'ring-primary');
+        parentLabel.classList.add('bg-surface-container-high');
+      }
+    });
+
+    // 3. Add-ons
+    const sandChecked = document.getElementById('addon-sand').checked;
+    const petHairChecked = document.getElementById('addon-pethair').checked;
+    const redDustChecked = document.getElementById('addon-reddust').checked;
+    const severeRedDustChecked = document.getElementById('addon-severered').checked;
+
+    const sandPrice = sandChecked ? 40 : 0;
+    const petHairPrice = petHairChecked ? 60 : 0;
+    const redDustPrice = redDustChecked ? 80 : 0;
+
+    let total = pkgPrice + vehSurcharge + sandPrice + petHairPrice + redDustPrice;
+
+    // Update state
+    currentEstimate = {
+      packageName: pkgName,
+      basePrice: pkgPrice,
+      vehicleType: vehName,
+      vehicleSurcharge: vehSurcharge,
+      heavySand: sandPrice,
+      petHair: petHairPrice,
+      redDust: redDustPrice,
+      severeRedDust: severeRedDustChecked,
+      total: total
+    };
+
+    // Update DOM
+    const totalDisplay = document.getElementById('calc-total-display');
+    const breakdownSub = document.getElementById('calc-breakdown-sub');
+
+    if (severeRedDustChecked) {
+      totalDisplay.innerHTML = '$' + total + '<span class="text-label-md text-error font-medium ml-1">+ Quote</span>';
+    } else {
+      totalDisplay.textContent = '$' + total;
+    }
+
+    let subText = pkgName + ' (' + vehName + ')';
+    let extras = [];
+    if (sandChecked) extras.push('Sand');
+    if (petHairChecked) extras.push('Pets');
+    if (redDustChecked) extras.push('Red Dust');
+    if (severeRedDustChecked) extras.push('Severe Dust');
+    if (extras.length > 0) {
+      subText += ' + ' + extras.join(', ');
+    }
+    breakdownSub.textContent = subText;
+  }
+
+  // Quick Action: Book Package from Package Cards
+  function selectPackageForBooking(packageName, price, duration) {
+    // Select the radio in booking Step 1
+    const radios = document.querySelectorAll('input[name="book_selected_package"]');
+    radios.forEach(r => {
+      if (r.value === packageName) {
+        r.checked = true;
+      }
+    });
+
+    // Sync Calculator as well
+    const calcRadios = document.querySelectorAll('input[name="calc_package"]');
+    calcRadios.forEach(cr => {
+      if (cr.getAttribute('data-name') === packageName) {
+        cr.checked = true;
+      }
+    });
+    calculateQuote();
+
+    // Scroll to booking
+    const bookingSec = document.getElementById('booking-section');
+    bookingSec.scrollIntoView({ behavior: 'smooth' });
+    goToBookingStep(2);
+  }
+
+  // Transfer Estimate to Step 2
+  function transferQuoteToBooking() {
+    const radios = document.querySelectorAll('input[name="book_selected_package"]');
+    radios.forEach(r => {
+      if (r.value === currentEstimate.packageName) {
+        r.checked = true;
+      }
+    });
+
+    // Preset vehicle dropdown if matching
+    const vehBodySelect = document.getElementById('veh-body');
+    if (currentEstimate.vehicleType.includes('SUV')) {
+      vehBodySelect.value = "SUV / Ute (+$40 AUD)";
+    } else if (currentEstimate.vehicleType.includes('7-Seater')) {
+      vehBodySelect.value = "7-Seater Wagon / Van (+$60 AUD)";
+    } else {
+      vehBodySelect.value = "Sedan / Hatchback (+$0 AUD)";
+    }
+
+    const bookingSec = document.getElementById('booking-section');
+    bookingSec.scrollIntoView({ behavior: 'smooth' });
+    goToBookingStep(2);
+  }
+
+  // Multi-step Booking Manager
+  function goToBookingStep(step) {
+    for (let i = 1; i <= 4; i++) {
+      const stepContainer = document.getElementById('booking-step-' + i);
+      const stepTab = document.getElementById('step-tab-' + i);
+      if (stepContainer) {
+        if (i === step) {
+          stepContainer.classList.remove('hidden');
+          stepContainer.classList.add('flex');
+          stepTab.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          stepTab.classList.add('bg-primary-container', 'text-surface-container-lowest', 'font-bold');
+        } else {
+          stepContainer.classList.add('hidden');
+          stepContainer.classList.remove('flex');
+          stepTab.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          stepTab.classList.remove('bg-primary-container', 'text-surface-container-lowest', 'font-bold');
+        }
+      }
+    }
+
+    if (step === 4) {
+      buildBookingSummary();
+    }
+  }
+
+  // Build Copyable Dossier
+  function buildBookingSummary() {
+    const pkgChecked = document.querySelector('input[name="book_selected_package"]:checked');
+    const pkgName = pkgChecked ? pkgChecked.value : currentEstimate.packageName;
+    const pkgPrice = pkgChecked ? pkgChecked.getAttribute('data-price') : currentEstimate.basePrice;
+
+    const make = document.getElementById('veh-make').value || 'Unspecified';
+    const model = document.getElementById('veh-model').value || 'Vehicle';
+    const year = document.getElementById('veh-year').value || 'N/A';
+    const rego = document.getElementById('veh-rego').value || 'None';
+    const body = document.getElementById('veh-body').value || 'Sedan / Hatch';
+    const condition = document.getElementById('veh-notes').value || 'Standard dirt/road dust';
+
+    const custName = document.getElementById('cust-name').value || 'Valued Perth Client';
+    const phone = document.getElementById('cust-phone').value || 'N/A';
+    const email = document.getElementById('cust-email').value || 'N/A';
+    const suburb = document.getElementById('cust-suburb').value || 'Perth Metro, WA';
+    const notes = document.getElementById('cust-comments').value || 'None';
+
+    const summaryText = 
+`[BUSINESS NAME] APPOINTMENT DOSSIER (PERTH, WA)
+=========================================
+• PACKAGE: ${pkgName} ($${pkgPrice} AUD base)
+• VEHICLE: ${year} ${make} ${model} (${body})
+• REGO: ${rego}
+• CONDITION NOTED: ${condition}
+• TOTAL ESTIMATED: $${currentEstimate.total} AUD ${currentEstimate.severeRedDust ? '(Severe red dust inspection req.)' : ''}
+
+CLIENT DETAILS:
+• Name: ${custName}
+• Phone: ${phone}
+• Email: ${email}
+• Suburb: ${suburb}
+• Special Access / Notes: ${notes}
+• Timezone: Australia/Perth (AWST)`;
+
+    document.getElementById('booking-summary-box').innerText = summaryText;
+  }
+
+  // 1-Click Clipboard Copy
+  function copyBookingSummary() {
+    const summaryText = document.getElementById('booking-summary-box').innerText;
+    navigator.clipboard.writeText(summaryText).then(() => {
+      const btnText = document.getElementById('copy-btn-text');
+      const original = btnText.innerText;
+      btnText.innerText = "✓ Dossier Copied to Clipboard!";
+      setTimeout(() => {
+        btnText.innerText = original;
+      }, 3000);
+    }).catch(() => {
+      alert("Please manually select and copy the dossier text above.");
+    });
+  }
+
+  // Gallery Filter
+  function filterGallery(category, clickedBtn) {
+    const buttons = document.querySelectorAll('.gallery-filter-btn');
+    buttons.forEach(btn => {
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+      btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+    clickedBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+    clickedBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+    const items = document.querySelectorAll('.gallery-item');
+    items.forEach(item => {
+      if (category === 'all' || item.classList.contains(category)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+
+  // Initialize
+  calculateQuote();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.7)]" data-active-classes="text-primary-container"><div class="h-16 px-space-sm flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-full transition-colors text-primary-container" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">garage</span><span class="font-label-sm text-label-sm tracking-wider uppercase mt-1">Home</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-full text-on-surface-variant transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome_motion</span><span class="font-label-sm text-label-sm tracking-wider uppercase mt-1">Services</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-full text-on-surface-variant transition-colors prototype-link-hover" data-path="pricing-calculator" href="#"><span class="material-symbols-outlined text-[22px]">calculate</span><span class="font-label-sm text-label-sm tracking-wider uppercase mt-1">Estimate</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-full text-on-surface-variant transition-colors prototype-link-hover" data-path="booking-hub" href="#"><span class="material-symbols-outlined text-[22px]">event_available</span><span class="font-label-sm text-label-sm tracking-wider uppercase mt-1">Book Now</span></a></div></nav></body></html>
